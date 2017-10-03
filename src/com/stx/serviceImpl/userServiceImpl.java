@@ -26,4 +26,16 @@ public class userServiceImpl implements userService {
       }
         return null;
     }
+
+    @Override
+    public User regist(User condition) {
+             if(condition!=null){
+                int u=userDao_new.addUser(condition);
+                if(u>0){
+                    return condition;
+                }
+            }
+            return null;
+        }
+
 }

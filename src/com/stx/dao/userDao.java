@@ -7,4 +7,6 @@ import com.stx.model.User;
  */
 public interface userDao {
       public User  Login (String uname);
+
+       public int   addUser(User  user);
 }

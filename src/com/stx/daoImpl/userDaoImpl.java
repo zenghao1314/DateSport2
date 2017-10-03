@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Administrator on 2017/10/1.
  */
 @Repository
-public class userDaoImpl implements userDao {
+public class userDaoImpl implements userDao  {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -33,6 +33,15 @@ public class userDaoImpl implements userDao {
         return user;
     }
 
+    @Override
+    public int addUser(User user) {
+        String sql="insert into ds_user(user_name,user_password,user_image) values(?,?,?)";
+        Object[] args= new Object[]{user.getUser_name(),user.getUser_password(),user.getUser_image()};
+        int result=jdbcTemplate.update(sql, args);
+        return result;
+    }
+
+
     private class BeanRowMapper0 implements RowMapper<User> {
         @Override
         public User mapRow(ResultSet rs, int num) throws SQLException {
@@ -44,9 +53,9 @@ public class userDaoImpl implements userDao {
 
            user.setUser_password(rs.getString("user_password"));
 
+           user.setUser_image(rs.getString("user_image"));
 
             return user;
-
 
         }
     }

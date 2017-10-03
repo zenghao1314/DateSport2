@@ -7,10 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.portlet.ModelAndView;
+
 
 import javax.annotation.Resource;
+
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 /**
  * Created by Administrator on 2017/10/1.
@@ -46,5 +48,17 @@ public class userAction {
             return "index";
         }
     }
+    @RequestMapping(value = "register.do", method = RequestMethod.POST)
+    public String Regiest(User user, HttpSession session) {
+        User u = userService_new.regist(user);
+        if (u != null) {
+            session.setAttribute("User", u);
+          return  "login";
+        } else {
+            return "login";
+        }
+
+    }
+
 }
 
