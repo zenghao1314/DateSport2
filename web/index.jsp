@@ -11,11 +11,13 @@
   <title>Title</title>
 </head>
 <body>
-  <form   method="post" action="user/register.do" id="form" name="form">
+  <form   method="post" action="/user/login.do" id="form" name="form">
     请输入你的姓名：<input type="text" name="user_name" id="user_name" >
     请输入你的密码：<input type="text" name="user_password" id="user_password" >
     <input type="submit" value="提交">
+    <a href="login.jsp">wwwwwwwwww </a>
     </form>
+
 </body>
 <script>
 

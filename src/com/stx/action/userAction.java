@@ -2,33 +2,38 @@ package com.stx.action;
 
 import com.stx.model.User;
 import com.stx.service.userService;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.test.annotation.SystemProfileValueSource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 
 import javax.annotation.Resource;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by Administrator on 2017/10/1.
  */
 @Controller
-@ResponseBody
 @RequestMapping("/user")
 public class userAction {
     @Resource
     private userService userService_new;
 
-//    // 登录
-//    @RequestMapping("login.do")
-//    public String toIndex() {
-//        return "login";
-//    }
+    // 登录
+    @RequestMapping("login.do")
+    public String toIndex() {
+        return "login";
+    }
 
     /*
     * 实现用户登录
@@ -36,24 +41,25 @@ public class userAction {
     * 判断是不是为空那
     * 不为空那么说明有这个用户，传进会话跟踪、登录成功返回主页面。否则登录页面。
     */
-    @ResponseBody
+
     @RequestMapping(value="login.do", method = RequestMethod.POST)
     public String Login(User user, HttpSession session) {
         User u = userService_new.login(user);
         if (u != null) {
             session.setAttribute("User", u);
+            return "main";
 
-            return "login";
         } else {
             return "index";
         }
     }
-    @RequestMapping(value = "register.do", method = RequestMethod.POST)
-    public String Regiest(User user, HttpSession session) {
+    @RequestMapping(value = "register.do",  method = RequestMethod.POST)
+    public String Regiest(User user, HttpSession session ) {
         User u = userService_new.regist(user);
+
         if (u != null) {
-            session.setAttribute("User", u);
-          return  "login";
+          session.setAttribute("message", null);
+            return "main";
         } else {
             return "login";
         }
