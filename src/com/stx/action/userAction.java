@@ -50,7 +50,7 @@ public class userAction {
             return "main";
 
         } else {
-            return "index";
+            return "login";
         }
     }
     @RequestMapping(value = "register.do",  method = RequestMethod.POST)
