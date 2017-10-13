@@ -17,7 +17,7 @@ public class userServiceImpl implements userService {
     private userDao userDao_new;
 
     @Override
-    public User login(User condition) {
+     public User login(User condition) {
       if (condition !=null){
           User user_new = userDao_new.Login(condition.getUser_name());
           if (condition.getUser_password().equals(user_new.getUser_password())){

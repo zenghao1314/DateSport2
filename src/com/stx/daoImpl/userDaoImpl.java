@@ -18,7 +18,7 @@ import java.util.List;
 public class userDaoImpl implements userDao  {
 
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+     private JdbcTemplate jdbcTemplate;
 
 
     @Override

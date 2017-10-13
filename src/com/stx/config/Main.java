@@ -15,7 +15,7 @@ import java.util.Map;
  * Created by Administrator on 2017/10/1.
  */
 public class Main {
-    private static final SessionFactory ourSessionFactory;
+     private static final SessionFactory ourSessionFactory;
 
     static {
         try {

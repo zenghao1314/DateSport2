@@ -21,7 +21,7 @@ public class User implements Serializable {
 
     private String user_image;
 
-    public String getUser_image() {
+     public String getUser_image() {
         return user_image;
     }
 
