@@ -20,7 +20,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="com:stx:config:hibernate.cfg.xml" />
+          <unit-entry name="com:stx:config:hibernate.cfg.xml" value="ea89759b-cfb6-4616-90cb-c4f6d4f9c72f" />
           <unit-entry name="hibernate.cfg.xml" />
         </datasource-map>
         <naming-strategy-map />
