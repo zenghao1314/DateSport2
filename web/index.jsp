@@ -3,8 +3,8 @@
 <head>
   <title>登录</title>
   <script src="javascript/jquery.1.11.3.js" type="text/javascript"></script>
-  <link href="css/common.css" rel="stylesheet" type="text/css">
-  <link href="css/register.css" rel="stylesheet" type="text/css">
+  <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css">
+  <link href="${pageContext.request.contextPath}/css/register.css" rel="stylesheet" type="text/css">
   <style type="text/css">
     .select-botton{
       background: #D8D8D8;
@@ -30,41 +30,33 @@
 <body>
 <header class="container" id="test">
   <div>
-      <img src="image/logo.png" height="70" width="450">
+      <img src="${pageContext.request.contextPath}/image/logo.png" height="70" width="450">
 
   </div>
 </header>
 
 <div class="container bg-img">
   <div>
+    <form action="${pageContext.request.contextPath}/user/login.do" method="post" >
     <div class="regist-mod" style="height: 332px;">
-      <title>***登录</title>
+         <title >登录</title>
       <div class="inp-g">
         <span class="icon user-mini-icon"></span>
-        <input placeholder="请输入手机号码" data-format="phone"/>
+        <input placeholder="请输入学号" data-format="phone" name="user_name"/>
       </div>
-
       <div class="inp-g">
         <span class="icon U-CARD-mini-icon"></span>
-        <input placeholder="请输入密码" data-format="医生执业号码"/>
+        <input placeholder="请输入密码"  name="user_password"/>
       </div>
-
-      <div class="group">
-        <div class="inp-g">
-          <span class="icon IMGC-mini-icon"></span>
-          <input placeholder="图片验证码" data-format="IMGC"/>
-        </div>
-
-        <div>
-          <img src="">
-        </div>
-      </div>
-
       <div class="btn-regist">
-        登录
+        <input type="submit" value="登录" name="login" id="login">
       </div>
     </div>
+    </form>
   </div>
 </div>
+<script>
+
+</script>
 </body>
 </html>

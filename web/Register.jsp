@@ -37,55 +37,27 @@
 </header>
 
 <div class="container bg-img">
+    <form action="${pageContext.request.contextPath}/user/register.do" method="post" name="theForm">
     <div>
         <div class="regist-mod">
-            <title>xxx注册</title>
+            <title>注册</title>
             <div class="inp-g">
                 <span class="icon user-mini-icon"></span>
-                <input placeholder="请输入手机号码" data-format="phone"/>
+                <input placeholder="请输入您的学号" data-format="phone" name="user_name"/>
             </div>
 
             <div class="inp-g">
                 <span class="icon U-CARD-mini-icon"></span>
-                <input placeholder="请输入医师执业号码" data-format="医生执业号码"/>
+                <input placeholder="请输入您的密码" data-format="医生执业号码" name="user_password"/>
             </div>
 
-            <div class="inp-g select-organization">
-                <span class="icon org-mini-icon"></span>
-                <select>
-                    <option>请选择机构</option>
-                </select>
-                <div class="select-botton">
-                    <div></div>
-                </div>
-            </div>
-
-            <div class="group">
-                <div class="inp-g">
-                    <span class="icon IMGC-mini-icon"></span>
-                    <input placeholder="图片验证码" data-format="IMGC"/>
-                </div>
-
-                <div>
-                    <img src="">
-                </div>
-            </div>
-
-            <div class="group">
-                <div class="inp-g">
-                    <span class="icon phone-mini-icon"></span>
-                    <input placeholder="手机验证码" data-format="PHOC"/>
-                </div>
-
-                <div class="btn-phoCode">
-                    发送验证码
-                </div>
             </div>
 
             <div class="btn-regist">
-                注册
+                <input type="submit" value="注册" name="register" >
             </div>
         </div>
+    </form>
     </div>
 </div>
 </body>
