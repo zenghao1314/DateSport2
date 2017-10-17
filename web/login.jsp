@@ -12,6 +12,8 @@
     <![if IE]>
     <script src="js/html5.js"></script>
     <![endif]>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.10.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
 </head>
 <body>
 <div class="container demo-1">
@@ -30,8 +32,7 @@
                         <input name="user_password" id="user_password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
                     </div>
                     <div class="mb2"> <input type="submit" value="登录" style="color: #FFFF" class="act-but submit" onclick="check()" ></div>
-                    <input type="button" onclick="check()" />
-
+                   <input type="button" onclick="check()" value="测试">
                 </form>
             </div>
         </div>
@@ -42,14 +43,11 @@
 <script src="js/rAF.js"></script>
 <script src="js/demo-1.js"></script>
 <script>
-//   function  check() {
-////       var userName= $("#user_name").value;
-//       var name= document.getElementsByName(userName);
-//       var userPassword= $("#user_password").value;
-////       alert(userName);
-//       alert(name)
-////       if(userName= ""||userPassword ="" ){
-//    }
+   function  check() {
+       var name= $("#user_name").val();
+       alert(name);
+
+    }
 
 
 </script>
