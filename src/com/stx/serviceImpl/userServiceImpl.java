@@ -38,4 +38,11 @@ public class userServiceImpl implements userService {
             return null;
         }
 
+    @Override
+    public boolean checkUser(String userName) {
+
+        return userDao_new.check(userName);
+    }
+
+
 }

@@ -14,9 +14,11 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.annotation.Resource;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -53,6 +55,7 @@ public class userAction {
             return "login";
         }
     }
+    //注册
     @RequestMapping(value = "register.do",  method = RequestMethod.POST)
     public String Regiest(User user, HttpSession session ) {
         User u = userService_new.regist(user);
@@ -64,6 +67,14 @@ public class userAction {
             return "login";
         }
 
+    }
+   //AJAX 验证注册名是否存在
+    @RequestMapping(value="check.do", method = RequestMethod.POST)
+    @ResponseBody
+    public  void checkUsername(String userName, HttpServletResponse response) throws IOException {
+        PrintWriter out = response.getWriter();
+        boolean msg = userService_new.checkUser(userName);
+        out.print(msg);
     }
 
 }

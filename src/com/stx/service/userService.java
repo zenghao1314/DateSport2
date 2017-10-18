@@ -9,4 +9,6 @@ public interface userService {
     public User login(User condition);
 
      public User regist(User condition);
+
+    public boolean checkUser(String userName);
 }

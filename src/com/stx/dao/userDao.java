@@ -9,4 +9,6 @@ public interface userDao {
        public User  Login (String uname);
 
        public int   addUser(User  user);
+
+       public  boolean check(String uname);
 }

@@ -41,6 +41,17 @@ public class userDaoImpl implements userDao  {
         return result;
     }
 
+    @Override
+    public boolean check(String uname) {
+        String sql = "select * from ds_user where user_name=? ";
+        Object[] args = new Object[]{uname};
+        List<User> list = jdbcTemplate.query(sql, args, new BeanRowMapper0());
+        if (list != null && list.size() > 0) {
+         return  false;
+        }
+       return true;
+    }
+
 
     private class BeanRowMapper0 implements RowMapper<User> {
         @Override

@@ -22,7 +22,7 @@
             <canvas id="demo-canvas"></canvas>
             <div class="logo_box">
                 <h3>欢迎你</h3>
-                <form action="${pageContext.request.contextPath}/user/login.do" name="theForm" method="post" id="theForm">
+                <form action="${pageContext.request.contextPath}/user/login.do" name="theForm" method="post" id="theForm" onsubmit="return check()">
                     <div class="input_outer">
                         <span class="u_user"></span>
                         <input name="user_name" id="user_name" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户" >
@@ -31,8 +31,8 @@
                         <span class="us_uer"></span>
                         <input name="user_password" id="user_password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
                     </div>
-                    <div class="mb2"> <input type="submit" value="登录" style="color: #FFFF" class="act-but submit" onclick="check()" ></div>
-                   <input type="button" onclick="check()" value="测试">
+                    <div class="mb2"> <input type="submit" value="登录" style="color: #FFFF" class="act-but submit"  ></div>
+                    <div class="mb2"> <input type="button" value="注册" style="color: #FFFF" class="act-but submit" id="zhuce" name="zhuce"></div>
                 </form>
             </div>
         </div>
@@ -44,11 +44,16 @@
 <script src="js/demo-1.js"></script>
 <script>
    function  check() {
-       var name= $("#user_name").val();
-       alert(name);
-
-    }
-
+   if ( $("#user_name").val() ==""||$("#user_password").val()=="" ){
+       alert("账号或者密码不能为空");
+       return false;
+   }
+   }
+   $(document).ready(function(){
+       $("#zhuce").click(function(){
+           window.location.href="Register.jsp"
+       });
+   });
 
 </script>
 </body>
